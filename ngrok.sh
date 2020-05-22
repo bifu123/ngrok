@@ -116,5 +116,5 @@ sudo mv ./ngrok.service /etc/systemd/system/
 sudo chmod a+x /etc/systemd/system/ngrok.service
 echo "服务创建完毕，可以sudo systemctl start ngrok.service启动之。手动启动:$n_path/bin/ngrokd -tlsKey=$n_path/server.key -tlsCrt=$n_path/server.crt -domain=\"$n_domain\" -httpAddr=\":$n_http_port\" -httpsAddr=\":$n_https_port\""
 #复制到本地
-echo "复制到test@1.207.63.31:/home/test/"
+echo "请复制客户端到本地"
 #scp -r /opt/ngrok/bin/windows_amd64 test@yourlocalpc:/home/test/
