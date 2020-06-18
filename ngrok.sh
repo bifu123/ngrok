@@ -99,6 +99,15 @@ ngrok -config=ngrok.cfg start http https mssql
 EOF
 echo "windows客户端文件创建完毕，路径在$n_path/bin/"
 
+#创建linux客户端
+sudo mkdir $n_path/bin/linux-client
+sudo cp $n_path/bin/windows_amd64/ngrok.cfg $n_path/bin/ngrok $n_path/bin/linux-client/
+(
+sudo cat<<EOF
+#!/bin/sh
+ngrok -config=ngrok.cfg start http https mssql
+EOF
+)>$n_path/bin/linux-client/startup.sh
 
 echo "创建服务"
 sudo cat>./ngrok.service<<EOF
@@ -116,5 +125,5 @@ sudo mv ./ngrok.service /etc/systemd/system/
 sudo chmod a+x /etc/systemd/system/ngrok.service
 echo "服务创建完毕，可以sudo systemctl start ngrok.service启动之。手动启动:$n_path/bin/ngrokd -tlsKey=$n_path/server.key -tlsCrt=$n_path/server.crt -domain=\"$n_domain\" -httpAddr=\":$n_http_port\" -httpsAddr=\":$n_https_port\""
 #复制到本地
-echo "请复制客户端到本地"
-#scp -r /opt/ngrok/bin/windows_amd64 test@yourlocalpc:/home/test/
+echo "请把客户端复制到本地，即可使用了"
+#scp -r /opt/ngrok/bin/windows_amd64 test@localip:/home/test/
