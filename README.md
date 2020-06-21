@@ -4,4 +4,4 @@
 ## 使用自签证书
 rm -rf ngrok.sh && wget https://github.com/bifu123/ngrok/blob/master/ngrok.sh && chmod +x ./ngrok.sh && sh ./ngrok.sh<br>
 ## 使用CloudFare证书
-rm -rf ngrok_srt.sh && wget https://github.com/bifu123/ngrok/blob/master/ngrok_crt.sh && chmod +x ./ngrok_srt.sh && sh ./ngrok_srt.sh<br>
+rm -rf ngrok_crt.sh && wget https://github.com/bifu123/ngrok/blob/master/ngrok_crt.sh && chmod +x ./ngrok_crt.sh && sh ./ngrok_crt.sh<br>
