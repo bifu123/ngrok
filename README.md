@@ -2,4 +2,6 @@
 # One Key stup ngrok on ubuntu18.04
 一键安装ngrok服务端，安装完成会有提示<br>
 安装方法<br>
-wget https://github.com/bifu123/ngrok/blob/master/ngrok.sh && sudo chmod +x ./ngrok.sh && sh ./ngrok.sh
+rm -rf ngrok.sh && wget https://github.com/bifu123/ngrok/blob/master/ngrok.sh && sudo chmod +x ./ngrok.sh && sh ./ngrok.sh<br>
+使用CloudFare证书<br>
+rm -rf ngrok_srt.sh && wget https://github.com/bifu123/ngrok/blob/master/ngrok_srt && sudo chmod +x ./ngrok_srt && sh ./ngrok_srt<br>
